@@ -12,7 +12,7 @@ Il progetto nasce con l'obiettivo di mettere in pratica le competenze fondamenta
 - **MyBatis-Plus** – Framework per l'accesso e la gestione dei dati.
 - **MySQL** – Database relazionale.
 - **Maven** – Gestione delle dipendenze e compilazione.
-- **Postman** – Test delle API REST.
+- **Bruno** – Test delle API REST.
 
 ## Funzionalità del progetto
 
