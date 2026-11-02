@@ -64,7 +64,7 @@ Gli stati disponibili per un'attività sono:
 
 - `TODO`
 - `IN_PROGRESS`
-- `COMPLETED`
+- `DONE`
 
 ### API REST
 
