@@ -20,7 +20,7 @@ public class Task {
 
     private String description;
 
-    private Object status;
+    private TaskStatus status;
 
     private Long projectId;
 }

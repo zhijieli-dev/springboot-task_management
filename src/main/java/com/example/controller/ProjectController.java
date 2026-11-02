@@ -1,7 +1,9 @@
 package com.example.controller;
 
 import com.example.pojo.Project;
+import com.example.pojo.Task;
 import com.example.service.ProjectService;
+import com.example.service.TaskService;
 import com.example.utils.Result;
 import com.example.utils.ResultCodeEnum;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,9 @@ public class ProjectController {
 
     @Autowired
     private ProjectService projectService;
+
+    @Autowired
+    private TaskService taskService;
 
     @PostMapping
     public Result<Project> createNewProject(@RequestBody Project project) {
@@ -48,6 +53,15 @@ public class ProjectController {
              return Result.ok(null);
          }
          return Result.build(ResultCodeEnum.NOT_FIND, null);
+    }
+
+    @PostMapping("/{projectId}/tasks")
+    public Result<Task> createTaskProject(@PathVariable("projectId") Long projectId, @RequestBody Task task) {
+        Project project = projectService.getById(projectId);
+        if(project == null) {
+            return Result.build(ResultCodeEnum.NOT_FIND, null);
+        }
+        return taskService.createTaskProject(projectId, task);
     }
 
 }
